@@ -8,20 +8,30 @@ export class Home extends Component {
 
     return (
       <div>
-        <h1>Hello, world!</h1>
-        <p>Welcome to your new single-page application, built with:</p>
+        <h1>Welcome to <strong><em>TJ's</em></strong> Dividend Web Application!</h1>
+            <p>This app uses information scraped from the SEC and other financial sources to provide a
+            consolidated view of relavant information for dividend stocks.  The web scraping does
+            is done by a Python project.   I hope to eventually consolidate both projects so that it is
+            possible to use the other project in tandem with this one to dynamically scrape from this
+                web app.</p>
         <ul>
-          <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-          <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
-          <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
+                <li><a href='/Stocks'>Basic Stock Information</a> View basic stock information such as the ticker,
+                    Company Name and CIK numbers for stocks that have data available.</li>
+                <li><a href='/data-report'>Data Report</a> View a table containing key stock dividend data across
+                    multiple years.</li>
+                <li><a href='/filings-page'>Filings Page</a> Display and sort a companies filings.  Links to the
+                    each filing.   Sorts by date or report type.</li>
         </ul>
-        <p>To help you get started, we have also set up:</p>
+            <p>This project is a work in progress as I have time available.  At present, none of the
+                features work or provide real data.  The status of each is below</p>
         <ul>
-          <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-          <li><strong>Development server integration</strong>. In development mode, the development server from <code>create-react-app</code> runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-          <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration produces minified, efficiently bundled JavaScript files.</li>
+                <li><strong>Basic Stock Information</strong>: Proof of concept with dummy data.  Plan to use this page
+                    to also create file and sql storage of company ticker, name and cik information.</li>
+          <li><strong>Data Report</strong>: Not yet implemented.</li>
+                <li><strong>Filings Page</strong>: Next to be started.  I will be hard coding several stocks to use as the
+                    foundational links to this page.</li>
         </ul>
-        <p>The <code>ClientApp</code> subdirectory is a standard React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p>
+        <p><em>This application is being developed using .Net Core, C# and React.</em></p>
       </div>
     );
   }

@@ -23,7 +23,7 @@ export class Stocks extends Component {
                         <th>Ticker</th>
                         <th>Company Name</th>
                         <th>CIK Number</th>
-                        <th>Dividend Report></th>
+                        <th>Dividend Report</th>
                         <th>Filings Page</th>
                     </tr>
                 </thead>
