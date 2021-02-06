@@ -28,13 +28,7 @@ namespace DividendWebApp.Controllers
         }
 
            
-            //private readonly ILogger<StockController> _logger;
-
-            //public StockController(ILogger<StockController> logger)
-            //{
-            //    _logger = logger;
-            //}
-
+       
         [HttpGet]
         public IEnumerable<Stock> Get()
         {

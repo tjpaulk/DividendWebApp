@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
+import { StockFilings } from './components/StockFilings';
 import { Counter } from './components/Counter';
 import { Stocks } from './components/Stocks';
 
@@ -16,7 +16,7 @@ export default class App extends Component {
       <Layout>
         <Route exact path='/' component={Home} />
         <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
+        <Route path='/filings-data' component={StockFilings} />
         <Route path='/stocks' component={Stocks} />
       </Layout>
     );

@@ -1,18 +1,19 @@
 ﻿import React, { Component } from 'react';
 
-export class FetchData extends Component {
-    static displayName = FetchData.name;
+export class StockFilings extends Component {
+    static displayName = StockFilings.name;
 
     constructor(props) {
         super(props);
-        this.state = { forecasts: [], loading: true };
+        this.state = { filings: [], loading: true };
     }
 
     componentDidMount() {
-        this.populateWeatherData();
+        this.populateFilingData();
     }
 
-    static renderForecastsTable(forecasts) {
+    static renderFilingsTable(filings) {
+        console.log(filings);
         return (
             <table className='table table-sorted' aria-labelledby="tabelLabel">
                 <thead>
@@ -22,16 +23,16 @@ export class FetchData extends Component {
                         <th>Filing Date</th>
                         <th>Filing Type</th>
                         <th>Filing Name</th>
+                        <th>Filing Link</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {forecasts.map(forecast =>
-                        <tr key={forecast.date}>
-                            <td>{forecast.date}</td>
-                            <td>{forecast.temperatureC}</td>
-                            <td>{forecast.temperatureF}</td>
-                            <td>{forecast.summary}</td>
-                            <td>999</td>
+                    {filings.map(filing =>
+                        <tr key={filing.reportNumber}>
+                            <td>{filing.filingDate}</td>
+                            <td>{filing.reportType}</td>
+                            <td>{filing.reportName}</td>
+                            <td>{filing.reportUrl}</td>
                         </tr>
                     )}
                 </tbody>
@@ -42,20 +43,24 @@ export class FetchData extends Component {
     render() {
         let contents = this.state.loading
             ? <p><em>Loading...</em></p>
-            : FetchData.renderForecastsTable(this.state.forecasts);
+            : StockFilings.renderFilingsTable(this.state.filings);
 
         return (
             <div>
-                <h1 id="tabelLabel" >Weather forecast</h1>
-                <p>This component demonstrates fetching data from the server.</p>
+                <h1 id="tabelLabel" >Company Filings</h1>
+                
                 {contents}
             </div>
         );
     }
 
-    async populateWeatherData() {
-        const response = await fetch('weatherforecast');
+    async populateFilingData() {
+        
+        const response = await fetch('stockfiling');
+        
         const data = await response.json();
-        this.setState({ forecasts: data, loading: false });
+        console.log(data);
+        this.setState({ filings: data, loading: false });
+        
     }
 }

@@ -10,9 +10,5 @@ namespace DividendWebApp
         public string Ticker { get; set; }
         public string Name { get; set; }
         public string CIK { get; set; }
-
-
-
-
     }
 }

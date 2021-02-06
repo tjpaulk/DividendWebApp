@@ -59,6 +59,7 @@ export class Stocks extends Component {
     async populateStockData() {
         
         const response = await fetch('stock');
+        
         const data = await response.json();
         this.setState({ stocks: data, loading: false });
         
